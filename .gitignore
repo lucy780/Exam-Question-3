@@ -1,0 +1,125 @@
+Q1-
+Load=LDA
+Store=STA
+Add=ADD
+Subtract=SUB
+Input=INP
+Output=OUT
+End=HLT
+Branch if zero=BRZ
+Branch if zero or positive=BRP
+Branch always=BRA
+Data location=DAT
+
+Q3-
+Load-Load the values of the given mailbox onto the accumulator. Note: the contents of the mailbox won't change.
+Store- Store the values of the accumulator to the mailbox of the given address. Note: the contents of the accumulator won't change.
+Add-Add the values of the given mailbox onto the accumulator. Note: the contents of the mailbox are not changed, and the actions of the accumulator are not defined for add instructions that cause sums larger than 3 digits.
+Subtract-Subtract the values of the given mailbox onto the accumulator. Note: the contents of the mailbox won't change, and the actions of the accumulator are not defined for subtract instructions that cause negative results -- however, a negative flag will be set so that BRP can be used properly 
+Input-Copy the value from the "in box" onto the accumulator.
+Output-Copy the value from the accumulator to the "out box". Note: the contents of the accumulator will not change.
+End-Causes the Little Man Computer to stop executing your program.
+Branch if zero-If the contents of the accumulator are 000, the PC (program counter) will be set to the given address.  Note: since the program is stored in memory, data and program instructions all have the same address/location format.
+Branch if zero or positive-If the contents of the accumulator are 000 or positive (i.e. the negative flag is not set), the PC (program counter) will be set to the given address.  Note: since the program is stored in memory, data and program instructions all have the same address/location format.
+Branch always-Set the contents of the accumulator to the given address.  Note: since the program is stored in memory, data and program instructions all have the same address/location format.
+Data location-When compiled, a program converts each instruction into a three-digit code.  These codes are placed in sequential mailboxes.  Instead of a program component, this instruction will reserve the next mailbox for data storage. 
+  
+Q4-
+i)
+INP
+STA FIRST
+INP
+STA SECOND
+SUB FIRST
+BRP SECONDBIG
+LDA SECOND 
+OUT
+LDA FIRST
+OUT
+BRA PROGEND SECONDBIG
+LDA FIRST
+OUT
+LDA SECOND
+OUT
+PROGEND HLT
+FIRST DAT
+SECOND DAT
+
+
+ii)
+INP 
+STA NUMBER
+LOOP LDA TOTAL 
+ADD NUMBER 
+STA TOTAL 
+LDA COUNTER 
+ADD ONE 
+STA COUNTER 
+LDA THREE 
+SUB COUNTER 
+BRP LOOP 
+LDA TOTAL
+OUT 
+HLT
+
+THREE DAT 003 
+COUNTER DAT 001
+ONE DAT 001 
+NUMBER DAT
+TOTAL DAT
+
+iii. INP
+STA ONE 
+INP 
+STA TWO
+INP 
+STA THREE 
+INP 
+STA FOUR
+INP 
+STA FIVE
+
+LDA FIVE 
+OUT 
+LDA FOUR
+OUT
+LDA THREE
+OUT 
+LDA TWO 
+OUT
+LDA ONE 
+OUT
+
+ONE DAT 
+TWO DAT
+THREE DAT
+FOUR DAT
+FIVE DAT
+
+5.  I am happy with what I was able to do. However, I feel that I need to work more on actually applying the assembly language to the program itself. I found this task very useful as I am now feel that I understand assembly language better.
+
+6. On the LMC there are limited instructions available to use in making a program so it is nearly impossible to create a complex programme such as a word processor using the LMC. Also, there are no easy ways to complete tasks such a multiplication. If there was to be other instructions for all the things needed, it would be a very long programme and very hard to understand.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
