@@ -11,6 +11,36 @@ Branch if zero or positive=BRP
 Branch always=BRA
 Data location=DAT
 
+Q2.
+INP- load value of mailbox to accumulator 
+STA FIRST
+INP- load value of mailbox to accumulator 
+STA SECOND 
+INP- load value of mailbox to accumulator 
+ADD FIRST-add the first value of given mailbox onto the accumulator
+ADD SECOND- add the second value of the given mailbox onto the first value on the accumulator
+OUT- copy the value from the accumulator to the 'outbox'
+HLT- stop executing program 
+FIRST DAT- when program compiled convert value into a 3 digit code
+SECOND DAT- when program compiled convert value into a 3 digit code
+
+INP- load value of mailbox to accumulator 
+STA FIRST- store first value on accumulator to the mailbox of the given address
+INP- load value of mailbox to accumulator 
+STA SECOND- store the second value on accumulator to the mailbox of the given address
+INP- load value of mailbox to accumulator 
+STA THIRD- store the third value on accumulator to the mailbox the givem address
+INP- load value of mailbox to accumulator 
+ADD FIRST- add the first value of given mailbox onto the accumulator
+ADD SECOND- add the second value of the given mailbox onto the first value on the accumulator
+ADD THIRD- add the thirs value of the given mailbox onto the first and second values on the accumulator
+OUT-copy the value from the accumulator to the 'outbox'
+HLT-stop executing program
+FIRST DAT- when program compiled convert value into a 3 digit code
+SECOND DAT- when program compiled convert value into a 3 digit code
+THIRD DAT- when program compiled convert value into a 3 digit code
+
+
 Q3-
 Load-Load the values of the given mailbox onto the accumulator. Note: the contents of the mailbox won't change.
 Store- Store the values of the accumulator to the mailbox of the given address. Note: the contents of the accumulator won't change.
